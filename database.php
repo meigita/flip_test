@@ -42,9 +42,8 @@ class database{
 		mysqli_query($this->connection,"insert into T_Disbursement values('$id','$amount','$status','$timestamp','$bank_code','$account_number','$beneficiary_name','$remark','$receipt','$time_served','$fee')");
 
 	}
-}
-
-	function Update_Data($response)
+	
+	function UpdateData($response)
 	{
 		$obj = json_decode($response);
 		$id = $obj->{'id'};
@@ -53,4 +52,6 @@ class database{
 		$time_served = $obj->{'time_served'};
 		mysqli_query($this->connection,"update T_Disbursement set status = '$status', receipt = '$receipt', time_served = '$time_served' where id='$id'");
 	}
+}
+
 ?>
