@@ -1,11 +1,13 @@
 <?php 
+include 'config.php';
+
 class database{
 
-	var $host = "localhost";
-	var $username = "root";
-	var $password = "";
-	var $database = "disburse";
-	var $connection = "";
+
+	private $username = DBUSER;
+	private $password = DBPASS;
+	private $database = DBNAME;
+	private $host = DBHOST;
 	
 	function __construct(){
 		$this->connection = mysqli_connect($this->host, $this->username, $this->password,$this->database);
@@ -17,11 +19,13 @@ class database{
 
 	function getId()
 	{
-		$data = mysqli_query($this->connection,"select * from T_Disbursement Limit 1");
+		$query = "select max(id)  as id from T_Disbursement ";
+		$data = mysqli_query($this->connection,$query);
 		while($row = mysqli_fetch_array($data)){
 			$hasil[] = $row;
 		}
 		return $hasil;
+		mysqli_close($this->connection);
 	}
 
 	function InsertData($response)
@@ -39,8 +43,11 @@ class database{
 		$time_served = $obj->{'time_served'};
 		$fee = $obj->{'fee'};
 
-		mysqli_query($this->connection,"insert into T_Disbursement values('$id','$amount','$status','$timestamp','$bank_code','$account_number','$beneficiary_name','$remark','$receipt','$time_served','$fee')");
+		$query = "insert into T_Disbursement (id,amount,status,timestamp,bank_code,account_number,beneficiary_name,remark,receipt,time_served,fee) " .
+		" values('$id','$amount','$status','$timestamp','$bank_code','$account_number','$beneficiary_name','$remark','$receipt','$time_served','$fee')";
 
+		mysqli_query($this->connection,$query);
+		mysqli_close($this->connection);
 	}
 	
 	function UpdateData($response)
@@ -50,7 +57,9 @@ class database{
 		$status = $obj->{'status'};
 		$receipt = $obj->{'receipt'};
 		$time_served = $obj->{'time_served'};
-		mysqli_query($this->connection,"update T_Disbursement set status = '$status', receipt = '$receipt', time_served = '$time_served' where id='$id'");
+		$query = "update T_Disbursement set status = '$status', receipt = '$receipt', time_served = '$time_served' where id='$id'";
+		mysqli_query($this->connection, $query);
+		mysqli_close($this->connection);
 	}
 }
 
