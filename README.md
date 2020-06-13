@@ -22,9 +22,9 @@ C:\xampp\htdocs\flip_test
 Or you can run it trough Powershell phpmyadmin
 
 1) Save file in HTDOCS
-C:\xampp\htdocs\flip_api
+C:\xampp\htdocs\flip_test
 
 2) Open Powershell phpmyadmin
-> # php -q htdocs\flip_api\Disbursement.php
-> # php -q htdocs\flip_api\CheckDisbursementStatus.php
+> # php -q htdocs\flip_test\Disbursement.php
+> # php -q htdocs\flip_test\CheckDisbursementStatus.php
 
