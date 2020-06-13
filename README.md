@@ -1,7 +1,11 @@
 # flip_test
 
+
+1) Save file in HTDOCS
+C:\xampp\htdocs\flip_test
+
 Import database to mysql
-1. Use Coammand Prompt (as administrator)
+1. Use Command Prompt (as administrator)
 - cd..
 - cd..
 - cd xampp/mysql/bin
@@ -11,20 +15,14 @@ Import database to mysql
 - use disburse
 - source c:\xampp\htdocs\flip_test\disburse.sql
 
+2. Import using phpmyadmin tool
+
 How to Run APP
+1) Using browser 
+- Run Disbursement.php to POST data and insert into local db
+- Run CheckDisbursementStatus.php using browser to GET data and update data in local db
 
-1) Save file in HTDOCS
-C:\xampp\htdocs\flip_test
-
-2) Run Disbursement.php using browser to POST data and insert into local db
-3) Run CheckDisbursementStatus.php using browser to GET data and update data in local db
-
-Or you can run it trough Powershell phpmyadmin
-
-1) Save file in HTDOCS
-C:\xampp\htdocs\flip_test
-
-2) Open Powershell phpmyadmin
+2) Powershell phpmyadmin
+- Open Powershell phpmyadmin
 > # php -q htdocs\flip_test\Disbursement.php
 > # php -q htdocs\flip_test\CheckDisbursementStatus.php
-
