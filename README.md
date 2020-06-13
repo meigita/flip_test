@@ -5,7 +5,7 @@
 C:\xampp\htdocs\flip_test
 
 Import database to mysql
-1. Use Command Prompt (as administrator)
+1. Use Command Prompt (run as administrator)
 - cd..
 - cd..
 - cd xampp/mysql/bin
