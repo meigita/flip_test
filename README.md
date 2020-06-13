@@ -2,14 +2,14 @@
 
 Import database to mysql
 1. Use Coammand Prompt (as administrator)
-> cd..
-> cd..
-> cd xampp/mysql/bin
-> mysql -u root -p
-> [enter] (if you do not have any password)
-> create database disburse
-> use disburse
-> source c:\xampp\htdocs\flip_test\disburse.sql
+- cd..
+- cd..
+- cd xampp/mysql/bin
+- mysql -u root -p
+- [enter] (if you do not have any password)
+- create database disburse
+- use disburse
+- source c:\xampp\htdocs\flip_test\disburse.sql
 
 How to Run APP
 
@@ -25,6 +25,6 @@ Or you can run it trough Powershell phpmyadmin
 C:\xampp\htdocs\flip_api
 
 2) Open Powershell phpmyadmin
-# php -q htdocs\flip_api\Disbursement.php
-# php -q htdocs\flip_api\CheckDisbursementStatus.php
+> # php -q htdocs\flip_api\Disbursement.php
+> # php -q htdocs\flip_api\CheckDisbursementStatus.php
 
